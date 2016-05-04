@@ -47,3 +47,24 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+function slideRightDiv() {    
+	$("#rightDiv").css("display", "block");    
+	$("#leftDiv").animate({
+		left: '-=' + window.innerWidth,    
+	}, 600);    
+	$("#rightDiv").animate({        
+		left: '-=' + window.innerWidth,    
+	}, 600);
+}
+function slideLeftDiv() {    
+	$("#leftDiv").animate({        
+		left: '+=' + window.innerWidth,    
+	}, 600);    
+	$("#rightDiv").animate({        
+		left: '+=' + window.innerWidth,    
+	}, 600, function() {        
+		$("#rightDiv").css("display", "none");
+	});    
+	$("#titleDiv").html("Cisita Test App");
+}
